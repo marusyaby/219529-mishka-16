@@ -1,0 +1,58 @@
+.catalog-list {
+  padding: 0;
+  margin: 0;
+  margin-right: 30px;
+  margin-left: 30px;
+  list-style: none;
+  line-height: 0;
+}
+
+.catalog-list__item {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid $fog-dark;
+}
+
+.catalog-item__info {
+  min-width: 260px;
+  padding-right: 30px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 6px 10px $fog-dark;
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px $fog-dark;
+  }
+}
+
+.catalog-item__title {
+  padding-top: 15px;
+
+  @include font(17px, 24px, bold);
+
+  color: #000000;
+}
+
+.catalog-item__description {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $fog-dark;
+
+  @include font(13px, 20px, normal);
+
+  color: $iron;
+}
+
+.catalog-item__price {
+  padding-top: 5px;
+  padding-bottom: 20px;
+
+  @include font(15px, 24px, bold);
+
+  color: #000000;
+}

@@ -1,0 +1,39 @@
+.main-nav__list {
+  list-style: none;
+  padding: 0;
+}
+
+.main-nav__item {
+  @include font;
+  font-style: normal;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 0;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+    border-bottom: 0;
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+    border-bottom: 0;
+  }
+}
+
+.main-nav__item a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+  border-bottom: 0;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+    border-bottom: 0;
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+    border-bottom: 0;
+  }
+}
