@@ -1,0 +1,19 @@
+.button {
+  @include font(17px, 20px, bold);
+  text-transform: uppercase;
+  background-color: #ffffff;
+  border: 2px solid $iron;
+
+  &:hover {
+    color: #ffffff;
+    background-color: $iron;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    // background-color: $mint;
+    outline: none;
+  }
+}

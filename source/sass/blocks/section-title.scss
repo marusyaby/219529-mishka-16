@@ -1,0 +1,8 @@
+.section-title {
+  margin: 0;
+  margin-top: 35px;
+  margin-bottom: 5px;
+
+  @include font(25px, 30px, bold);
+  color: #000000;
+}

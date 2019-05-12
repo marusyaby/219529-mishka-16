@@ -1,0 +1,16 @@
+.advantages {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.advantages__list {
+  padding: 0;
+  list-style: none;
+}
+
+.advantages__item {
+  margin-bottom: 30px;
+
+  @include font(17px, 20px, bold);
+  color: #000000;
+}

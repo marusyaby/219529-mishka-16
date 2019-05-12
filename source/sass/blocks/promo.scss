@@ -1,0 +1,26 @@
+.promo__item {
+  padding: 30px;
+  display: block;
+
+  @include font(19px, 24px, bold);
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 0;
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.3);
+    border-bottom: 0;
+  }
+}
+
+.promo__item--interior {
+  background-color: $mint;
+}
+
+.promo__item--toys {
+  background-color: $mint-dark;
+}

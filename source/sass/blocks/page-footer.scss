@@ -1,0 +1,28 @@
+.page-footer {
+  margin-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+  background-color: $fog;
+}
+
+.page-footer__social {
+  padding: 0;
+  padding-top: 30px;
+  list-style: none;
+}
+
+.page-footer__developer {
+  @include font(19px, 18px, bold);
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 0;
+
+  &:hover {
+    color: #000000;
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+  }
+}

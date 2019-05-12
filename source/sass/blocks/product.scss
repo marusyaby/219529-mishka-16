@@ -1,0 +1,32 @@
+.product {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.product__lable {
+  @include font(17px, 20px, bold);
+  color: $mint;
+  text-transform: uppercase;
+}
+
+.product__attribute {
+  min-width: 100px;
+}
+
+.product_photo {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.product__price {
+  margin-top: 25px;
+  display: block;
+
+  @include font;
+  text-align: center;
+}
+
+.product__order {
+  padding: 20px;
+  margin-top: 25px;
+}
