@@ -1,0 +1,18 @@
+.additional-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.additional-nav__item a {
+  margin-right: 20px;
+  border: 0;
+
+  &:hover {
+    border: 0;
+  }
+
+  &:active {
+    border: 0;
+  }
+}

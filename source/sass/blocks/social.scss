@@ -1,0 +1,16 @@
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social__item {
+  min-width: 30px;
+  min-height: 30px;
+  background-color: $mint;
+  padding: 10px;
+
+  &:hover {
+    background-color: $mint-dark;
+    cursor: pointer;
+  }
+}

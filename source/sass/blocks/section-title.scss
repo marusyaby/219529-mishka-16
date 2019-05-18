@@ -1,8 +1,13 @@
 .section-title {
   margin: 0;
-  margin-top: 35px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 
   @include font(25px, 30px, bold);
   color: #000000;
+}
+
+@media (min-width: $tablet) {
+  .section-title {
+    @include font(43px, 50px, bold);
+  }
 }
