@@ -1,14 +1,21 @@
 .main-nav__list {
-  list-style: none;
   padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .main-nav__item {
+  padding: 25px;
+  padding-top: 27px;
+  min-height: 30px;
+  border-top: 1px solid $fog-dark;
+  border-bottom: 0;
+  display: block;
+
   @include font;
-  font-style: normal;
+  font-style: bold;
   color: #000000;
   text-decoration: none;
-  border-bottom: 0;
 
   &:hover {
     color: rgba(#000000, 0.6);
@@ -22,10 +29,10 @@
 }
 
 .main-nav__item a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #000000;
   border-bottom: 0;
+
+  font-weight: bold;
+  color: #000000;
 
   &:hover {
     color: rgba(#000000, 0.6);
@@ -35,5 +42,66 @@
   &:active {
     color: rgba(#000000, 0.3);
     border-bottom: 0;
+  }
+}
+
+.main-nav__toggle {
+  width: 50px;
+  height: 50px;
+  font-size: 0;
+  position: absolute;
+  margin-top: -70px;
+  right: 30px;
+}
+
+@media (min-width: $tablet) {
+  .main-nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav__list {
+    position: absolute;
+    max-width: 60%;
+    top: 90px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-nav__item {
+    border: 0;
+  }
+
+  .main-nav__list .main-nav__item {
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+
+  .main-nav__item--search label,
+  .main-nav__item--search input {
+    display: none;
+  }
+
+  .main-nav__item--search {
+    background-color: $fog;
+  }
+
+  .main-nav__item--cart {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  .main-nav__list {
+    top: 0;
   }
 }

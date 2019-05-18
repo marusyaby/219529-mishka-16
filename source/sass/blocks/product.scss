@@ -1,32 +1,149 @@
 .product {
   padding-left: 30px;
   padding-right: 30px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  max-width: 1050px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product__container-title {
+  margin-bottom: 20px;
+}
+
+h2.product__title {
+  margin-bottom: 0;
 }
 
 .product__lable {
-  @include font(17px, 20px, bold);
+  @include font(17px, 17px, bold);
   color: $mint;
   text-transform: uppercase;
+}
+
+.product__description {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.product__features {
+  margin-bottom: 20px;
 }
 
 .product__attribute {
   min-width: 100px;
 }
 
-.product_photo {
-  margin-top: 30px;
-  width: 100%;
-}
-
 .product__price {
-  margin-top: 25px;
-  display: block;
+  margin-top: 0;
+  margin-bottom: 20px;
 
-  @include font;
+  @include font();
   text-align: center;
 }
 
 .product__order {
   padding: 20px;
-  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.product__photo {
+  margin-bottom: 30px;
+  line-height: 0;
+}
+
+.product__photo img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: $tablet) {
+  .product {
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .product__container-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product__lable {
+    width: 100px;
+    text-align: center;
+  }
+
+  .product__container-info {
+    align-self: flex-start;
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 45px;
+  }
+
+  .product__price {
+    width: calc(50% - 45px);
+    margin: 0;
+    margin-top: -100px;
+    align-self: flex-start;
+  }
+
+  .product__order {
+    margin: 0;
+    margin-top: -100px;
+    margin-right: calc(50% - 45px);
+    width: calc(50% - 45px);
+    box-sizing: border-box;
+  }
+
+  .product__photo {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  .product {
+    margin-top: 80px;
+    margin-bottom: 70px;
+  }
+
+  .product__container-title {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .product__lable {
+    width: 175px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+
+  .product__container-info {
+    width: calc(50% - 175px - 60px);
+    margin-left: 175px;
+    margin-right: 60px;
+  }
+
+  .product__price {
+    width: calc(50% - 175px - 60px);
+    margin-left: 175px;
+  }
+
+  .product__order {
+    width: calc(50% - 175px - 60px);
+    margin-left: 175px;
+  }
+
+  .product__photo {
+    max-width: 525px;
+    margin-top: -100px;
+    z-index: -1;
+  }
 }
