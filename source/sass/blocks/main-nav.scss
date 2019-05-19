@@ -5,9 +5,6 @@
 }
 
 .main-nav__item {
-  padding: 25px;
-  padding-top: 27px;
-  min-height: 30px;
   border-top: 1px solid $fog-dark;
   border-bottom: 0;
   display: block;
@@ -29,6 +26,14 @@
 }
 
 .main-nav__item a {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 25px;
+  padding-top: 23px;
+  padding-left: 75px;
+  padding-right: 30px;
+  display: block;
+
   border-bottom: 0;
 
   font-weight: bold;
@@ -46,22 +51,55 @@
 }
 
 .main-nav__toggle {
-  width: 50px;
-  height: 50px;
-  font-size: 0;
+  width: 60px;
+  height: 60px;
+  background-color: $fog;
+  border: 0;
   position: absolute;
-  margin-top: -70px;
-  right: 30px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 21px;
+  height: 21px;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  background-color: $mint;
+}
+
+.main-nav--opened .main-nav__toggle::before {
+  background-color: $mint-dark;
+}
+
+@media (max-width: $tablet - 1px) {
+  .main-nav--closed .main-nav__item {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__item {
+    display: block;
+  }
 }
 
 @media (min-width: $tablet) {
   .main-nav {
     position: relative;
     width: 100%;
+    min-height: 88px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    flex-wrap: wrap;
   }
 
   .main-nav__toggle {
@@ -72,36 +110,51 @@
     position: absolute;
     max-width: 60%;
     top: 90px;
-    left: 0;
+    left: -88px;
     display: flex;
     flex-wrap: wrap;
   }
 
   .main-nav__item {
-    border: 0;
+    border-top: 0;
   }
 
-  .main-nav__list .main-nav__item {
+  .main-nav__item a {
     padding-left: 0;
+    padding-right: 35px;
+    padding-top: 15px;
     padding-bottom: 0;
-  }
 
-  .main-nav__item--search label,
-  .main-nav__item--search input {
-    display: none;
-  }
-
-  .main-nav__item--search {
-    background-color: $fog;
-  }
-
-  .main-nav__item--cart {
-    padding-right: 0;
+    @include font (15px, 24px, bold);
   }
 }
 
 @media (min-width: $desktop) {
   .main-nav__list {
+    left: 0;
     top: 0;
+  }
+
+  .main-nav__item {
+    padding-left: 30px;
+    border-right: 1px solid $fog-dark;
+  }
+
+  .main-nav__item:last-child {
+    border-right: 0;
+  }
+
+  .main-nav__item:first-child {
+    padding-left: 0;
+  }
+
+  .main-nav__item--search {
+    padding-left: 0;
+  }
+
+  .main-nav__item a {
+    @include font(17px, 24px, bold);
+    padding-top: 30px;
+    padding-bottom: 35px;
   }
 }
