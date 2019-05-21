@@ -11,3 +11,9 @@
     @include font(43px, 50px, bold);
   }
 }
+
+@media (min-width: $desktop) {
+  .section-title {
+    @include font(53px, 57px, bold);
+  }
+}

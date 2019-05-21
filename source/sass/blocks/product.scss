@@ -1,11 +1,17 @@
 .product {
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 40px;
   margin: 0 auto;
   margin-bottom: 30px;
   max-width: 1050px;
   display: flex;
   flex-direction: column;
+
+  background-image: url("../img/bg-zigzag-line.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .product__container-title {
@@ -24,32 +30,41 @@ h2.product__title {
 
 .product__description {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .product__features {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 28px;
+  border-collapse: collapse;
+}
+
+.product__features tr {
+  border-bottom: 1px solid $fog-dark;
 }
 
 .product__attribute {
-  min-width: 100px;
+  min-width: 75px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .product__price {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 
   @include font();
   text-align: center;
 }
 
 .product__order {
-  padding: 20px;
-  margin-bottom: 30px;
+  padding: 14px;
 }
 
 .product__photo {
-  margin-bottom: 30px;
+  max-width: 390px;
+  margin: 0 auto;
+  margin-bottom: 25px;
   line-height: 0;
 }
 
@@ -62,12 +77,15 @@ h2.product__title {
   .product {
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 70px;
+    margin-bottom: 50px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
   }
 
   .product__container-title {
+    margin-bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -75,7 +93,7 @@ h2.product__title {
   }
 
   .product__lable {
-    width: 100px;
+    width: 125px;
     text-align: center;
   }
 
@@ -86,11 +104,23 @@ h2.product__title {
     padding-right: 45px;
   }
 
+  .product__description {
+    margin-bottom: 30px;
+
+    @include font(17px, 30px, normal);
+  }
+
+  .product__attribute {
+    min-width: 65px;
+  }
+
   .product__price {
     width: calc(50% - 45px);
     margin: 0;
-    margin-top: -100px;
+    margin-top: -110px;
     align-self: flex-start;
+
+    @include font(20px, 24px, bold);
   }
 
   .product__order {
@@ -103,14 +133,16 @@ h2.product__title {
 
   .product__photo {
     width: 50%;
+    max-width: 100%;
     margin: 0;
+    margin-top: 5px;
   }
 }
 
 @media (min-width: $desktop) {
   .product {
-    margin-top: 80px;
-    margin-bottom: 70px;
+    padding-bottom: 100px;
+    background-size: 1050px;
   }
 
   .product__container-title {
@@ -127,8 +159,13 @@ h2.product__title {
 
   .product__container-info {
     width: calc(50% - 175px - 60px);
+    padding-right: 0;
     margin-left: 175px;
     margin-right: 60px;
+  }
+
+  .product__description {
+    margin-bottom: 45px;
   }
 
   .product__price {
@@ -143,7 +180,7 @@ h2.product__title {
 
   .product__photo {
     max-width: 525px;
-    margin-top: -100px;
+    margin-top: -160px;
     z-index: -1;
   }
 }
