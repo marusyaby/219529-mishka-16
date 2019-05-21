@@ -1,13 +1,19 @@
 .social {
+  list-style: none;
   display: flex;
   justify-content: center;
 }
 
 .social__item {
+  margin-right: 10px;
   min-width: 30px;
   min-height: 30px;
   background-color: $mint;
   padding: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &:hover {
     background-color: $mint-dark;

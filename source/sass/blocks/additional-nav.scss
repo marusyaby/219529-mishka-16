@@ -5,14 +5,21 @@
 }
 
 .additional-nav__item a {
-  margin-right: 20px;
+  padding: 15px;
+  padding-left: 0;
+  margin-right: 45px;
   border: 0;
+
+  @include font(15px, 24px, bold);
+  color: #000000;
 
   &:hover {
     border: 0;
+    color: rgba(#000000, 0.6);
   }
 
   &:active {
     border: 0;
+    color: rgba(#000000, 0.3);
   }
 }

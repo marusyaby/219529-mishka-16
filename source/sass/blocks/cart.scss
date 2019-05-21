@@ -1,0 +1,21 @@
+.cart {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 29px;
+  padding-top: 26px;
+  padding-left: 75px;
+  padding-right: 30px;
+}
+
+.cart-number {
+  margin-left: 5px;
+}
+
+@media (min-width: $tablet) {
+  .cart {
+    width: auto;
+    padding-top: 30px;
+    padding-right: 0;
+    padding-left: 84px;
+  }
+}

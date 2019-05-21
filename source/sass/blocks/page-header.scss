@@ -13,8 +13,8 @@
 }
 
 .page-header__logo {
-  padding-top: 20px;
-  padding-bottom: 18px;
+  padding-top: 22px;
+  padding-bottom: 12px;
   border: 0;
   align-self: center;
 
@@ -35,31 +35,33 @@
 
 @media (min-width: $tablet) {
   .page-header {
-    height: 82px;
+    height: 88px;
+    border-top: 0;
+    z-index: 1;
   }
 
   .page-header__container {
     padding-left: 50px;
     padding-right: 50px;
-  }
-
-  .page-header__logo {
-    position: absolute;
-    align-self: flex-start;
-    z-index: 2;
+    flex-direction: row;
   }
 
   .page-header__delivery {
+    padding-top: 15px;
+    max-width: 40%;
     display: block;
     position: absolute;
     right: 50px;
-    top: 120px;
+    top: 90px;
+    text-align: right;
   }
 }
 
 @media (min-width: $desktop) {
   .page-header__logo {
-    align-self: center;
+    position: absolute;
+    left: calc(50% - 44px);
+    z-index: 2;
   }
 
   .page-header__additional-nav {
@@ -67,6 +69,6 @@
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 110px;
+    top: 105px;
   }
 }

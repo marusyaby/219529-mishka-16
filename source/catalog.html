@@ -16,13 +16,13 @@
       <a class="page-header__logo"  href="index.html">
         <img class="page-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Mishka" />
       </a>
-      <nav class="page-header__main-nav main-nav">
-        <button class="main-nav__toggle" type="button">Открыть меню</button>
+      <nav class="page-header__main-nav main-nav main-nav--closed main-nav--nojs">
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <ul class="main-nav__list">
           <li class="main-nav__item"><a href="catalog.html">Каталог товаров</a></li>
           <li class="main-nav__item"><a href="form.html">Вязание на&nbsp;заказ</a></li>
         </ul>
-        <form class="main-nav__item main-nav__item--search search" action="https://echo.htmlacademy.ru" method="get">
+        <form class="main-nav__item main-nav__item--search search search--closed" action="https://echo.htmlacademy.ru" method="get">
           <label for="search-input">Поиск по сайту</label>
           <input id="search-input" type="search" name="search" />
           <button type="submit"><span class="visually-hidden">Поиск по сайту</span></button>
@@ -46,32 +46,44 @@
     <ul class="catalog-list">
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <img class="catalog-item__photo" src="img/photo-hare-mobile@1x.jpg" width="260" height="195" alt="Вязаный зайчик" />
+          <a  class="catalog-item__photo" href="#">
+            <img src="img/photo-hare-mobile@1x.jpg" width="260" height="195" alt="Вязаный зайчик" />
+          </a>
         </div>
         <div class="catalog-item__info">
-          <h2 class="catalog-item__title">Зайчик-попрыгайчик</h2>
+          <a  class="catalog-item__title" href="#">
+            <h2>Зайчик-попрыгайчик</h2>
+          </a>
           <p class="catalog-item__description">Рост 30 см, вес 200 г</p>
-          <div class="catalog-item__price">1 200 руб.</div>
+          <button class="catalog-item__price">1 200 руб.</div>
         </div>
       </li>
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <img class="catalog-item__photo" src="img/photo-bowl-mobile@1x.jpg" width="260" height="195" alt="Вязаная корзинка" />
+          <a  class="catalog-item__photo" href="#">
+            <img src="img/photo-bowl-mobile@1x.jpg" width="260" height="195" alt="Вязаная корзинка" />
+          </a>
         </div>
         <div class="catalog-item__info">
-          <h2 class="catalog-item__title">Корзинка для белья</h2>
+          <a  class="catalog-item__title" href="#">
+            <h2>Корзинка для белья</h2>
+          </a>
           <p class="catalog-item__description">Диаметр 15 см, высота 10 см</p>
-          <div class="catalog-item__price">690 руб.</div>
+          <button class="catalog-item__price" href="#">690 руб.</button>
         </div>
       </li>
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <img src="img/photo-toys-mobile@1x.jpg" width="260" height="195" alt="Большая вязаная корзинка" />
+          <a  class="catalog-item__photo" href="#">
+            <img src="img/photo-toys-mobile@1x.jpg" width="260" height="195" alt="Большая вязаная корзинка" />
+          </a>
         </div>
         <div class="catalog-item__info">
-          <h2 class="catalog-item__title">Большая корзинка для&nbsp;игрушек</h2>
+          <a  class="catalog-item__title" href="#">
+            <h2>Большая корзинка для&nbsp;игрушек</h2>
+          </a>
           <p class="catalog-item__description">Диаметр 30 см, высота 30 см</p>
-          <div class="catalog-item__price">1 500 руб.</div>
+          <button class="catalog-item__price">1 500 руб.</div>
         </div>
       </li>
     </ul>
@@ -103,6 +115,23 @@
     </div>
 
   </footer>
+
+  <script>
+    var navMain = document.querySelector('.main-nav');
+    var navToggle = document.querySelector('.main-nav__toggle');
+
+    navMain.classList.remove('main-nav--nojs');
+
+    navToggle.addEventListener('click', function() {
+      if (navMain.classList.contains('main-nav--closed')) {
+        navMain.classList.remove('main-nav--closed');
+        navMain.classList.add('main-nav--opened');
+      } else {
+        navMain.classList.add('main-nav--closed');
+        navMain.classList.remove('main-nav--opened');
+      }
+    });
+  </script>
 
 </body>
 
