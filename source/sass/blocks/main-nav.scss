@@ -1,43 +1,45 @@
 .main-nav__list {
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .main-nav__item {
-  border-top: 1px solid $fog-dark;
-  border-bottom: 0;
   display: block;
-
-  @include font;
-  font-style: bold;
   color: #000000;
   text-decoration: none;
+  font-style: bold;
+  border-top: 1px solid $fog-dark;
+  border-bottom: 0;
+  fill: rgba(#000000, 0.2);
+
+  @include font;
 
   &:hover {
     color: rgba(#000000, 0.6);
     border-bottom: 0;
+    fill: $mint;
   }
 
   &:active {
-    color: rgba(#000000, 0.3);
     border-bottom: 0;
+    opacity: 0.3;
   }
 }
 
 .main-nav__item a {
+  display: block;
   box-sizing: border-box;
   width: 100%;
-  padding-bottom: 25px;
   padding-top: 23px;
-  padding-left: 75px;
   padding-right: 30px;
-  display: block;
-
-  border-bottom: 0;
+  padding-bottom: 25px;
+  padding-left: 75px;
 
   font-weight: bold;
   color: #000000;
+
+  border-bottom: 0;
 
   &:hover {
     color: rgba(#000000, 0.6);
@@ -51,14 +53,23 @@
 }
 
 .main-nav__toggle {
-  width: 60px;
-  height: 60px;
-  background-color: $fog;
-  border: 0;
   position: absolute;
   top: 10px;
   right: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .main-nav__toggle::before {
@@ -71,11 +82,14 @@
 }
 
 .main-nav--closed .main-nav__toggle::before {
-  background-color: $mint;
+  top: 22px;
+  background-image: url("../img/icon-menu-open.svg");
+  background-repeat: no-repeat;
 }
 
 .main-nav--opened .main-nav__toggle::before {
-  background-color: $mint-dark;
+  background-image: url("../img/icon-menu-close.svg");
+  background-repeat: no-repeat;
 }
 
 @media (max-width: $tablet - 1px) {
@@ -95,11 +109,11 @@
 @media (min-width: $tablet) {
   .main-nav {
     position: relative;
-    width: 100%;
-    min-height: 88px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    width: 100%;
+    min-height: 88px;
   }
 
   .main-nav__toggle {
@@ -108,11 +122,11 @@
 
   .main-nav__list {
     position: absolute;
-    max-width: 60%;
     top: 90px;
-    left: -88px;
+    left: -112px;
     display: flex;
     flex-wrap: wrap;
+    max-width: 60%;
   }
 
   .main-nav__item {
@@ -120,10 +134,10 @@
   }
 
   .main-nav__item a {
-    padding-left: 0;
-    padding-right: 35px;
     padding-top: 15px;
+    padding-right: 35px;
     padding-bottom: 0;
+    padding-left: 0;
 
     @include font (15px, 24px, bold);
   }
@@ -131,8 +145,8 @@
 
 @media (min-width: $desktop) {
   .main-nav__list {
-    left: 0;
     top: 0;
+    left: 0;
   }
 
   .main-nav__item {
@@ -152,9 +166,14 @@
     padding-left: 0;
   }
 
+  .main-nav__item--cart {
+    padding-left: 85px;
+  }
+
   .main-nav__item a {
-    @include font(17px, 24px, bold);
     padding-top: 30px;
     padding-bottom: 35px;
+
+    @include font(17px, 24px, bold);
   }
 }

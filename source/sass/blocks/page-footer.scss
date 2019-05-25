@@ -1,20 +1,19 @@
 .page-footer {
-  margin-top: auto;
   width: 100%;
+  margin-top: auto;
   background-color: $fog;
 }
 
 .page-footer__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1050px;
   margin: 0 auto;
-  // margin-top: 40px;
   padding: 30px;
   padding-top: 15px;
   padding-bottom: 20px;
-  max-width: 1050px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .page-footer__logo {
@@ -23,32 +22,35 @@
 
 .page-footer__social {
   margin-top: 0;
+  margin-right: 0;
   margin-bottom: 15px;
   margin-left: -10px;
-  margin-right: 0;
   padding: 0;
 }
 
 .page-footer__developer {
-  padding-top: 20px;
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  @include font(19px, 18px, bold);
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
   color: #000000;
   text-decoration: none;
   border-top: 1px solid #e5e5e5;
   border-bottom: 0;
+  fill: $mint;
+
+  @include font(19px, 18px, bold);
 
   &:hover {
     color: #000000;
     border-bottom: 0;
+    fill: $mint-light;
   }
 
   &:active {
-    color: rgba(#000000, 0.3);
+    opacity: 0.3;
+    fill: $mint;
   }
 }
 
@@ -58,19 +60,29 @@
 
 @media (min-width: $tablet) {
   .page-footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 49px;
+    padding-right: 50px;
     padding-bottom: 30px;
     padding-left: 50px;
-    padding-right: 50px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .page-footer__logo {
     display: block;
-    border-bottom: 0;
     margin-top: 4px;
+    border-bottom: 0;
+
+    &:hover {
+      border-bottom: 0;
+      cursor: pointer;
+      fill: $mint-light;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   .page-footer__social {
@@ -80,7 +92,7 @@
 
   .page-footer__developer {
     width: auto;
-    border-top: 0;
     padding: 0;
+    border-top: 0;
   }
 }

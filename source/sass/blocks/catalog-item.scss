@@ -14,10 +14,10 @@
 }
 
 .catalog-item__info {
+  box-sizing: border-box;
   min-width: 260px;
   padding-right: 30px;
   padding-left: 30px;
-  box-sizing: border-box;
 
   &:hover {
     box-shadow: 0 6px 10px $fog-dark;
@@ -32,11 +32,11 @@
   display: block;
   padding-top: 25px;
   padding-bottom: 10px;
+
+  color: #000000;
   border-bottom: 0;
 
   @include font(17px, 24px, bold);
-
-  color: #000000;
 
   &:hover,
   &:active {
@@ -45,17 +45,17 @@
 }
 
 .catalog-item__title h2 {
-  font-size: inherit;
   margin: 0;
+  font-size: inherit;
 }
 
 .catalog-item__description {
   margin-top: 0;
   margin-bottom: 25px;
 
-  @include font(13px, 20px, normal);
-
   color: $iron;
+
+  @include font(13px, 20px, normal);
 }
 
 .catalog-item__price {
@@ -64,34 +64,39 @@
   padding: 0;
   padding-top: 20px;
   padding-bottom: 28px;
+  text-align: left;
+  color: #000000;
+
+  background-color: transparent;
   border: 0;
   border-top: 1px solid $fog-dark;
   outline: 0;
 
-  @include font(15px, 24px, bold);
-  text-align: left;
-  color: #000000;
-
   cursor: pointer;
+  fill: rgba(0, 0, 0, 0.2);
 
-  background-color: transparent;
+  @include font(15px, 24px, bold);
 
-  &::after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-color: $fog;
-    position: absolute;
-    right: 0;
-    bottom: 25px;
+  &:hover {
+    fill: $mint;
   }
+
+  &:active {
+    fill: rgba(99, 209, 187, 0.3);
+  }
+}
+
+.catalog-item__price svg {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  fill: inherit;
 }
 
 @media (min-width: $tablet) {
   .catalog-item {
-    min-height: 310px;
     display: flex;
+    min-height: 310px;
   }
 
   .catalog-item__photo {
@@ -99,9 +104,9 @@
   }
 
   .catalog-item__info {
-    width: 50%;
     display: flex;
     flex-direction: column;
+    width: 50%;
   }
 
   .catalog-item__title {
@@ -113,8 +118,8 @@
   }
 
   .catalog-item__price {
-    padding-top: 24px;
     margin-top: auto;
+    padding-top: 24px;
 
     @include font(17px, 24px, bold);
   }

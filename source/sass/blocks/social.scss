@@ -1,22 +1,49 @@
 .social {
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
 }
 
 .social__item {
-  margin-right: 10px;
+  position: relative;
   min-width: 30px;
   min-height: 30px;
-  background-color: $mint;
+  margin-right: 10px;
   padding: 10px;
+  // background-color: $mint;
+  fill: #000000;
 
   &:last-child {
     margin-right: 0;
   }
 
   &:hover {
-    background-color: $mint-dark;
     cursor: pointer;
+    fill: $mint-light;
   }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.social__link {
+  position: absolute;
+  border: 0;
+  fill: inherit;
+}
+
+.social__link--insta {
+  top: 15px;
+  left: 15px;
+}
+
+.social__link--fb {
+  top: 10px;
+  left: 20px;
+}
+
+.social__link--twitter {
+  top: 15px;
+  left: 15px;
 }
