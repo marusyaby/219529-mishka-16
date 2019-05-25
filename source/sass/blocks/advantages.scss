@@ -1,29 +1,79 @@
 .advantages {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin: 0 auto;
   max-width: 1050px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .advantages__list {
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .advantages__item {
   margin-bottom: 25px;
+  color: #000000;
 
   @include font(17px, 20px, bold);
-  color: #000000;
 
   &::before {
     content: "";
     display: block;
-    width: 40px;
+    width: 60px;
     height: 40px;
     margin-bottom: 18px;
-    background-color: $fog;
+    margin-left: -5px;
+
+    background-position: center;
+  }
+}
+
+.advantages__item--eco {
+  &::before {
+    background-image: url("../img/icon-feature-flower.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.advantages__item--handmade {
+  &::before {
+    background-image: url("../img/icon-feature-ball.svg");
+    background-repeat: no-repeat;
+    background-position: left 7px bottom 0;
+  }
+}
+
+.advantages__item--price {
+  &::before {
+    background-image: url("../img/icon-feature-money.svg");
+    background-repeat: no-repeat;
+    background-position: top 3px;
+  }
+}
+
+.advantages__item--native {
+  &::before {
+    background-image: url("../img/icon-feature-rocket.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+}
+
+.advantages__item--likes {
+  &::before {
+    background-image: url("../img/icon-feature-heart.svg");
+    background-repeat: no-repeat;
+    background-position: left 15px bottom 2px;
+  }
+}
+
+.advantages__item--gift {
+  &::before {
+    background-image: url("../img/icon-feature-gift.svg");
+    background-repeat: no-repeat;
+    background-position: left 7px bottom 2px;
   }
 }
 
@@ -35,9 +85,9 @@
   }
 
   .advantages__item {
-    padding-right: 20px;
-    width: 50%;
     box-sizing: border-box;
+    width: 50%;
+    padding-right: 20px;
   }
 
   .advantages__item--eco {
@@ -67,8 +117,8 @@
 
 @media (min-width: $tablet) {
   .advantages {
-    padding-left: 50px;
     padding-right: 50px;
+    padding-left: 50px;
   }
 
   h2.advantages__title {
@@ -76,9 +126,10 @@
   }
 
   .advantages__item {
-    @include font(20px, 22px, bold);
 
     margin-bottom: 52px;
+
+    @include font(20px, 22px, bold);
   }
 }
 
@@ -88,7 +139,7 @@
   }
 
   .advantages__list {
-    padding-left: 175px;
     width: 700px;
+    padding-left: 175px;
   }
 }

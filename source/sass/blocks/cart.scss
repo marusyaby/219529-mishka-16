@@ -1,13 +1,20 @@
 .cart {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
-  padding-bottom: 29px;
   padding-top: 26px;
-  padding-left: 75px;
   padding-right: 30px;
+  padding-bottom: 29px;
+  padding-left: 75px;
 }
 
-.cart-number {
+.cart__icon {
+  position: absolute;
+  top: 28px;
+  left: 30px;
+}
+
+.cart__number {
   margin-left: 5px;
 }
 
@@ -17,5 +24,10 @@
     padding-top: 30px;
     padding-right: 0;
     padding-left: 84px;
+  }
+
+  .cart__icon {
+    top: 33px;
+    left: 34px;
   }
 }
