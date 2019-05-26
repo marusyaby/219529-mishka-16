@@ -63,6 +63,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    min-height: 145px;
     padding-top: 49px;
     padding-right: 50px;
     padding-bottom: 30px;

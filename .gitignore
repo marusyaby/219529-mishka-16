@@ -1,4 +1,3 @@
-.postcss-sorting.json
 .DS_Store
 .idea
 .vscode
@@ -9,6 +8,7 @@
 *.sublime*
 node_modules/
 npm-debug.*
-source/css/*.css
-source/css/*.map
 Thumbs.db
+build/
+img-source/
+.postcss-sorting.json
