@@ -1,9 +1,9 @@
 .section-title {
   margin: 0;
   margin-bottom: 30px;
+  color: #000000;
 
   @include font(25px, 30px, bold);
-  color: #000000;
 }
 
 @media (min-width: $tablet) {

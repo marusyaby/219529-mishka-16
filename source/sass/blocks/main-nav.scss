@@ -21,8 +21,10 @@
     fill: $mint;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     border-bottom: 0;
+    outline: 0;
     opacity: 0.3;
   }
 }
@@ -46,9 +48,11 @@
     border-bottom: 0;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     color: rgba(#000000, 0.3);
     border-bottom: 0;
+    outline: 0;
   }
 }
 
@@ -60,14 +64,15 @@
   height: 60px;
   background-color: transparent;
   border: 0;
-  outline: none;
   cursor: pointer;
 
   &:hover {
     opacity: 0.6;
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: 0;
     opacity: 0.3;
   }
 }

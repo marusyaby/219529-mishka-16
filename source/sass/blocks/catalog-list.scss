@@ -1,18 +1,18 @@
 .catalog-list {
   max-width: 1050px;
-  padding: 0;
   margin: 0;
   margin-right: 30px;
   margin-left: 30px;
+  padding: 0;
   list-style: none;
   line-height: 0;
 }
 
 .catalog-list__item {
-  padding: 0;
+  width: 100%;
   margin: 0;
   margin-bottom: 30px;
-  width: 100%;
+  padding: 0;
   border: 1px solid $fog-dark;
 }
 
@@ -30,9 +30,9 @@
 
 @media (min-width: $desktop) {
   .catalog-list {
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
   }
 
   .catalog-list__item {

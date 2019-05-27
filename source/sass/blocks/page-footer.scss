@@ -48,7 +48,9 @@
     fill: $mint-light;
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: 0;
     opacity: 0.3;
     fill: $mint;
   }
