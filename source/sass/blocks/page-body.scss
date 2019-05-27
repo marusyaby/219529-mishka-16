@@ -1,28 +1,28 @@
 .page-body {
-  min-height: 100vh;
-  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
 
   font-family: "Open Sans", "Arial", sans-serif;
 
-  @include font(15px, 24px, normal);
-  font-style: normal;
-
   color: $iron;
+  font-style: normal;
   background-color: #ffffff;
+
+  @include font(15px, 24px, normal);
 }
 
 a {
   padding-bottom: 4px;
-
-  @include font(17px, 30px, normal);
   color: $iron;
   text-decoration: none;
   border-bottom: 1px solid $mint;
+
+  @include font(17px, 30px, normal);
 
   &:hover {
     color: $mint-light;

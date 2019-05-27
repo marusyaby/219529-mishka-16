@@ -15,6 +15,9 @@ var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
+var htmlmin = require('gulp-htmlmin');
+var uglify = require('gulp-uglify');
+var pipeline = require('readable-stream').pipeline;
 
 // Очистка папки build
 gulp.task("clean", function () {
@@ -76,7 +79,7 @@ gulp.task("webp", function () {
     .pipe(gulp.dest("source/img"));
 });
 
-// Созадние css из sass c sourcemaps, префиксы, минификация
+// Созадние css из sass c sourcemaps, префиксы, минификация, переименование в *.min.css
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
@@ -86,19 +89,32 @@ gulp.task("css", function () {
       autoprefixer()
     ]))
     .pipe(csso())
-    .pipe(rename("style.min.css"))
+    // .pipe(rename("style.min.css"))
+    .pipe(rename(function (path) {
+      path.extname = ".min.css"
+    }))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
-//  Вставка в html вместо 'include scr="..."' содержимого файла
+//  Вставка в html вместо 'include scr="..."' содержимого файла, минификация
 gulp.task("html", function () {
   return gulp.src("source/*.html")
     .pipe(posthtml([
       include()
     ]))
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest("build"));
+});
+
+// Минификация js
+gulp.task("js", function () {
+  return pipeline(
+    gulp.src("source/js/**/*.js"),
+    uglify(),
+    gulp.dest("build/js")
+  );
 });
 
 // Обновление страницы
@@ -107,20 +123,23 @@ gulp.task("refresh", function (done) {
   done();
 });
 
+//Запуск папки build в Firefox
 gulp.task("server", function () {
   server.init({
     server: "build/",
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
+    browser: ["firefox"]
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
+  gulp.watch("source/js/**/*.js", gulp.series("copy", "refresh"));
   gulp.watch("source/img/*.svg", gulp.series("copy", "refresh"));
   gulp.watch("source/img/*-sprite.svg", gulp.series("copy", "sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html", "js"));
 gulp.task("start", gulp.series("build", "server"));

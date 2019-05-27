@@ -6,12 +6,15 @@
   <title>HTML Academy: Мишка — Каталог товаров</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous" />
   <link href="css/style.min.css" rel="stylesheet">
   <script>
     // Picture element HTML5 shiv
     document.createElement( "picture" );
   </script>
   <script src="js/picturefill.js" async></script>
+  <script src="js/mobilemenu.js" defer></script>
 </head>
 
 <body class="page-body">
@@ -67,7 +70,7 @@
     <ul class="catalog-list">
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <a  class="catalog-item__photo" href="#">
+          <a  class="catalog-item__photo" href="#" tabindex="-1">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 745px)" srcset="img/photo-hare-tablet@1x@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
@@ -93,7 +96,7 @@
       </li>
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <a  class="catalog-item__photo" href="#">
+          <a  class="catalog-item__photo" href="#" tabindex="-1">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-bowl-desktop@1x.webp 1x, img/photo-bowl-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 745px)" srcset="img/photo-bowl-tablet@1x@1x.webp 1x, img/photo-bowl-tablet@2x.webp 2x">
@@ -119,7 +122,7 @@
       </li>
       <li class="catalog-list__item catalog-item">
         <div class="catalog-item__photo">
-          <a  class="catalog-item__photo" href="#">
+          <a  class="catalog-item__photo" href="#" tabindex="-1">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-toys-desktop@1x.webp 1x, img/photo-toys-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 745px)" srcset="img/photo-toys-tablet@1x@1x.webp 1x, img/photo-toys-tablet@2x.webp 2x">
@@ -183,7 +186,7 @@
         </li>
       </ul>
 
-      <a class="page-footer__developer" href="https://htmlacademy.ru">Разработано
+      <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive">Разработано
         <svg class="page-footer__developer-logo" width="27" height="34">
           <use xlink:href="#logo-htmlacademy-sprite"></use>
         </svg>
@@ -191,23 +194,6 @@
     </div>
 
   </footer>
-
-  <script>
-    var navMain = document.querySelector('.main-nav');
-    var navToggle = document.querySelector('.main-nav__toggle');
-
-    navMain.classList.remove('main-nav--nojs');
-
-    navToggle.addEventListener('click', function() {
-      if (navMain.classList.contains('main-nav--closed')) {
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-      } else {
-        navMain.classList.add('main-nav--closed');
-        navMain.classList.remove('main-nav--opened');
-      }
-    });
-  </script>
 
 </body>
 
