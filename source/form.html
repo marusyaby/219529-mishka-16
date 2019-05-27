@@ -6,7 +6,10 @@
   <title>HTML Academy: Мишка — Вязание на заказ</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous" />
   <link href="css/style.min.css" rel="stylesheet">
+  <script src="js/mobilemenu.js" defer></script>
 </head>
 
 <body class="page-body">
@@ -97,7 +100,7 @@
         </li>
       </ul>
 
-      <a class="page-footer__developer" href="https://htmlacademy.ru">Разработано
+      <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive">Разработано
         <svg class="page-footer__developer-logo" width="27" height="34">
           <use xlink:href="#logo-htmlacademy-sprite"></use>
         </svg>
@@ -105,23 +108,6 @@
     </div>
 
   </footer>
-
-  <script>
-    var navMain = document.querySelector('.main-nav');
-    var navToggle = document.querySelector('.main-nav__toggle');
-
-    navMain.classList.remove('main-nav--nojs');
-
-    navToggle.addEventListener('click', function() {
-      if (navMain.classList.contains('main-nav--closed')) {
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-      } else {
-        navMain.classList.add('main-nav--closed');
-        navMain.classList.remove('main-nav--opened');
-      }
-    });
-  </script>
 
 </body>
 

@@ -34,9 +34,11 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
     color: rgba(#ffffff, 0.3);
     border-bottom: 0;
+    outline: 0;
 
     &::after {
       opacity: 0.3;
