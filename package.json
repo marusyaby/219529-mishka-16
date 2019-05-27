@@ -43,14 +43,11 @@
     "*.json",
     "*.js",
     "source/*.html",
-    "source/js/**/*.js",
+    "source/js/**/[^(!?(picturefill))]*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],
   "engines": {
     "node": "8.15"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
   }
 }
