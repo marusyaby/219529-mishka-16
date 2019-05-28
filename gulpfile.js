@@ -132,8 +132,7 @@ gulp.task("server", function () {
     notify: false,
     open: true,
     cors: true,
-    ui: false,
-    browser: ["firefox"]
+    browser: ["google chrome"]
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
