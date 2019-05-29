@@ -1,7 +1,7 @@
 .advantages {
   max-width: 1050px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -23,7 +23,7 @@
     display: block;
     width: 60px;
     height: 40px;
-    margin-bottom: 18px;
+    margin-bottom: 17px;
     margin-left: -5px;
 
     background-position: center;
@@ -49,7 +49,7 @@
   &::before {
     background-image: url("../img/icon-feature-money.svg");
     background-repeat: no-repeat;
-    background-position: top 3px;
+    background-position: left 5px bottom 12px;
   }
 }
 
@@ -65,7 +65,7 @@
   &::before {
     background-image: url("../img/icon-feature-heart.svg");
     background-repeat: no-repeat;
-    background-position: left 15px bottom 2px;
+    background-position: left 13px bottom 5px;
   }
 }
 
@@ -119,7 +119,7 @@
   .advantages {
     padding-right: 50px;
     padding-left: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   h2.advantages__title {
@@ -128,7 +128,7 @@
 
   .advantages__item {
 
-    margin-bottom: 52px;
+    margin-bottom: 55px;
 
     @include font(20px, 22px, bold);
   }
@@ -136,7 +136,7 @@
 
 @media (min-width: $desktop) {
   .advantages {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   .advantages__title {

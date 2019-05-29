@@ -1,5 +1,5 @@
 .reviews {
-  margin-bottom: 60px;
+  margin-bottom: 35px;
   padding-right: 30px;
   padding-left: 30px;
 
@@ -40,7 +40,7 @@ h2.reviews__title {
 
 .reviews__author-nickname {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .reviews__control-buttons {
@@ -50,7 +50,6 @@ h2.reviews__title {
 
 .reviews__button {
   width: 100%;
-  min-height: 52px;
 }
 
 .reviews__button--back {
@@ -90,7 +89,7 @@ h2.reviews__title {
 @media (min-width: $tablet) {
   .reviews {
     min-height: 400px;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     padding-top: 80px;
     padding-right: 50px;
     padding-bottom: 60px;
@@ -146,6 +145,7 @@ h2.reviews__title {
     margin-left: auto;
     padding-right: 0;
     padding-left: 0;
+    margin-bottom: 150px;
   }
 
   .reviews__container {

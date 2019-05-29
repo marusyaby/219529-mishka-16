@@ -67,7 +67,7 @@
     align-items: center;
     box-sizing: border-box;
     min-height: 145px;
-    padding-top: 49px;
+    padding-top: 30px;
     padding-right: 50px;
     padding-bottom: 30px;
     padding-left: 50px;
@@ -75,7 +75,7 @@
 
   .page-footer__logo {
     display: block;
-    margin-top: 4px;
+    margin-top: 5px;
     border-bottom: 0;
 
     &:hover,
@@ -93,12 +93,19 @@
 
   .page-footer__social {
     margin: 0;
-    margin-left: 72px;
+    margin-left: 70px;
   }
 
   .page-footer__developer {
     width: auto;
     padding: 0;
     border-top: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  .page-footer__container {
+    padding-right: 0;
+    padding-left: 0;
   }
 }

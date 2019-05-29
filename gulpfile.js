@@ -24,6 +24,11 @@ gulp.task("clean", function () {
   return del("build");
 });
 
+//Очистка папки build/js
+gulp.task("cleanJs", function () {
+  return del("build/js");
+});
+
 // Копирование файлов в папку build
 gulp.task("copy", function () {
   return gulp.src([
@@ -136,7 +141,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
-  gulp.watch("source/js/**/*.js", gulp.series("copy", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("cleanJs", "js", "refresh"));
   gulp.watch("source/img/*.svg", gulp.series("copy", "refresh"));
   gulp.watch("source/img/*-sprite.svg", gulp.series("copy", "sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));

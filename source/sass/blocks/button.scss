@@ -1,5 +1,9 @@
 .button {
+  display: block;
+  box-sizing: border-box;
+  min-height: 52px;
   padding: 14px;
+  text-align: center;
   color: $iron;
   text-transform: uppercase;
   background-color: #ffffff;
